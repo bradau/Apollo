@@ -25,3 +25,6 @@
     - weave
     - registrator
     - haproxy
+
+# serverspec tests
+- include: tests/test.yml

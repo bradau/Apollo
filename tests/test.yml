@@ -1,0 +1,20 @@
+---
+- hosts: all
+  sudo: yes
+  vars:
+    tests_path: /vagrant/tests
+  tasks:
+    - name: install bundler
+      command: gem install bundler --no-ri --no-rdoc
+      args:
+        creates: /usr/local/bin/bundler
+    - name: install bundle files
+      command: bundle install --path vendor
+      args:
+        chdir: "{{ tests_path }}"
+        creates: "{{ tests_path }}/vendor"
+    - name: run serverspec tests
+      command: "bundle exec rake serverspec:{{ ansible_hostname }}"
+      args:
+        chdir: "{{ tests_path }}"
+

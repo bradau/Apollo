@@ -1,0 +1,24 @@
+master1:
+  :roles:
+    - dnsmasq
+    - mesos_master
+    - marathon
+    - zookeeper
+master2:
+  :roles:
+    - dnsmasq
+    - mesos_master
+    - marathon
+    - zookeeper
+master3:
+  :roles:
+    - dnsmasq
+    - mesos_master
+    - marathon
+    - zookeeper
+slave1:
+  :roles:
+    - dnsmasq
+    - mesos_slave
+    - weave
+    - docker
