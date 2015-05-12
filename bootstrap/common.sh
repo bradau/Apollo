@@ -13,6 +13,10 @@ get_apollo_variables() {
   echo ${var_list[@]}
 }
 
+get_ansible_requirements() {
+  ansible-galaxy install -f -n -r plugins.yml
+}
+
 check_terraform_version() {
 
   local IFS='.'

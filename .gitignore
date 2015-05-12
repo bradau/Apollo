@@ -10,3 +10,4 @@ packer/*.pem
 .wercker
 *.cache
 ssh.config
+plugins
